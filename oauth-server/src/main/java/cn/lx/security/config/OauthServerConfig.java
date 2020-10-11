@@ -21,6 +21,7 @@ import org.springframework.security.oauth2.provider.code.AuthorizationCodeServic
 import org.springframework.security.oauth2.provider.code.InMemoryAuthorizationCodeServices;
 import org.springframework.security.oauth2.provider.code.JdbcAuthorizationCodeServices;
 import org.springframework.security.oauth2.provider.token.AccessTokenConverter;
+import org.springframework.security.oauth2.provider.token.DefaultAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.*;
@@ -37,6 +38,12 @@ import java.security.KeyPair;
 @Configuration
 @EnableAuthorizationServer
 public class OauthServerConfig extends AuthorizationServerConfigurerAdapter {
+
+    /**
+     * 向令牌中添加自定义信息的对象
+     */
+    @Autowired
+    private MyJwtUserAuthenticationConverter myJwtUserAuthenticationConverter;
 
     /**
      * 读取application.yml中配置的证书文件，需要设置位置，密码，别名等
@@ -103,6 +110,10 @@ public class OauthServerConfig extends AuthorizationServerConfigurerAdapter {
                 .getKeyPair(keyProperties().getKeyStore().getAlias());
         //设置秘钥对
         converter.setKeyPair(keyPair);
+        //获取jwt默认的令牌转化工具，DefaultAccessTokenConverter是其真实的类型
+        DefaultAccessTokenConverter defaultAccessTokenConverter = (DefaultAccessTokenConverter) converter.getAccessTokenConverter();
+        //自定义的令牌生成格式覆盖原始的
+        defaultAccessTokenConverter.setUserTokenConverter(myJwtUserAuthenticationConverter);
         return converter;
     }
 
