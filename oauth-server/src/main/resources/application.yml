@@ -9,6 +9,8 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
   main:
     allow-bean-definition-overriding: true
+  application:
+    name: server
 
 
 mybatis:
@@ -27,3 +29,10 @@ encrypt:
     location: classpath:/testoauth.jks
     password: testoauth
     secret: testoauth
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7001/eureka
+  instance:
+    prefer-ip-address: true

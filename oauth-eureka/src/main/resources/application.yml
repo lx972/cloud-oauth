@@ -1,0 +1,14 @@
+server:
+  port: 7001
+
+
+logging:
+  level:
+    cn.lx.security: debug
+
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://127.0.0.1:7001/eureka
+    fetch-registry: false

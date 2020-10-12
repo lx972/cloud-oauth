@@ -7,17 +7,23 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="oauth-zuul" />
+        <module name="oauth-resource2" />
+        <module name="oauth-resource1" />
         <module name="security-common" />
+        <module name="oauth-eureka" />
         <module name="oauth-server" />
-        <module name="oauth-resource" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="cloud-oauth" options="-parameters" />
-      <module name="oauth-resource" options="-parameters" />
+      <module name="oauth-eureka" options="-parameters" />
+      <module name="oauth-resource1" options="-parameters" />
+      <module name="oauth-resource2" options="-parameters" />
       <module name="oauth-server" options="-parameters" />
+      <module name="oauth-zuul" options="-parameters" />
       <module name="security-common" options="-parameters" />
     </option>
   </component>
