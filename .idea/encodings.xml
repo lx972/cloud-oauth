@@ -7,6 +7,7 @@
     <file url="file://$PROJECT_DIR$/oauth-resource2" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/oauth-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/oauth-zuul1" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/oauth-zuul2" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/security-common" charset="UTF-8" />
   </component>
 </project>

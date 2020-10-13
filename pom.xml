@@ -15,6 +15,7 @@
         <module>oauth-zuul1</module>
         <module>oauth-eureka</module>
         <module>oauth-resource2</module>
+        <module>oauth-zuul2</module>
     </modules>
 
     <parent>

@@ -1,0 +1,44 @@
+server:
+  port: 10002
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+
+  application:
+    name: zuul
+
+logging:
+  level:
+    cn.lx.security: debug
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7001/eureka
+  instance:
+    prefer-ip-address: true
+
+zuul:
+  #是否去除前缀
+  strip-prefix: true
+  routes:
+    #模块的别名
+    resource2:
+      #配置请求URL的请求规则(只能写一个)
+      path: /resource2/**
+      #指定Eureka注册中心中的服务id（需要打开从eureka获取数据的配置fetch-registery）
+      serviceId: resource2
+      sentiviteHeaders:
+      #处理cookie及重定向问题
+      customSensitiveHeaders: true
+
+    #模块的别名
+    server:
+      #配置请求URL的请求规则(只能写一个)
+      path: /server/**
+      #指定Eureka注册中心中的服务id（需要打开从eureka获取数据的配置fetch-registery）
+      serviceId: server
+      sentiviteHeaders:
+      #处理cookie及重定向问题
+      customSensitiveHeaders: true
