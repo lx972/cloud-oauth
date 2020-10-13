@@ -7,11 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="oauth-zuul" />
         <module name="oauth-resource2" />
         <module name="oauth-resource1" />
         <module name="security-common" />
         <module name="oauth-eureka" />
+        <module name="oauth-zuul1" />
         <module name="oauth-server" />
       </profile>
     </annotationProcessing>
@@ -23,7 +23,7 @@
       <module name="oauth-resource1" options="-parameters" />
       <module name="oauth-resource2" options="-parameters" />
       <module name="oauth-server" options="-parameters" />
-      <module name="oauth-zuul" options="-parameters" />
+      <module name="oauth-zuul1" options="-parameters" />
       <module name="security-common" options="-parameters" />
     </option>
   </component>

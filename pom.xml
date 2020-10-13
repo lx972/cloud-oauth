@@ -12,7 +12,7 @@
         <module>security-common</module>
         <module>oauth-server</module>
         <module>oauth-resource1</module>
-        <module>oauth-zuul</module>
+        <module>oauth-zuul1</module>
         <module>oauth-eureka</module>
         <module>oauth-resource2</module>
     </modules>

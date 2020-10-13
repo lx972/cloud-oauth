@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 10001
 
 spring:
   main:
@@ -23,16 +23,6 @@ zuul:
   #是否去除前缀
   strip-prefix: true
   routes:
-    #模块的别名
-    resource1:
-      #配置请求URL的请求规则(只能写一个)
-      path: /resource1/**
-      #指定Eureka注册中心中的服务id（需要打开从eureka获取数据的配置fetch-registery）
-      serviceId: resource1
-      sentiviteHeaders:
-      #处理cookie及重定向问题
-      customSensitiveHeaders: true
-
     #模块的别名
     resource2:
       #配置请求URL的请求规则(只能写一个)
